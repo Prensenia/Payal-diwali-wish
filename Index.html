@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyu's Safe Space</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons for beautiful SVG icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        deep: '#030014',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #030014;
+            color: #e2e8f0;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #a78bfa 0%, #fcd34d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative flex flex-col items-center hide-scrollbar">
+
+    <!-- Ambient Background Glows -->
+    <div class="fixed top-[-10%] left-[-10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-violet-900/30 rounded-full blur-[100px] animate-pulse-slow pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-amber-900/20 rounded-full blur-[100px] animate-pulse-slow pointer-events-none z-0" style="animation-delay: 2s;"></div>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10 w-full max-w-2xl px-6 pt-16 pb-32 flex-1 flex flex-col">
+        
+        <!-- SECTION: HOME -->
+        <section id="home" class="tab-content flex-1 flex flex-col justify-center items-center text-center opacity-0 animate-fade-in">
+            <div class="mb-8 relative animate-float">
+                <div class="absolute inset-0 bg-violet-500/30 blur-2xl rounded-full"></div>
+                <i data-lucide="sparkles" class="text-amber-300 w-12 h-12 relative z-10"></i>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-semibold mb-6 tracking-tight">
+                Welcome, <span class="text-gradient">Piyu.</span>
+            </h1>
+            
+            <p class="text-slate-400 text-lg md:text-xl max-w-md leading-relaxed mb-12">
+                A quiet corner just for us. No rush, no noise, just a digital space reflecting the warmth and light you bring.
+            </p>
+
+            <div class="glass-panel p-6 rounded-2xl w-full max-w-sm border border-violet-500/30 shadow-[0_0_20px_rgba(139,92,246,0.15)] transition duration-500 hover:border-violet-400/50">
+                <p class="text-slate-300 italic text-[15px] leading-relaxed">
+                    "Destination mai tabhi paunchege, jab aap bologe."
+                </p>
+                <div class="mt-4 flex justify-center">
+                    <i data-lucide="heart" class="text-violet-400 w-4 h-4 fill-violet-400/20"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: TIMELINE -->
+        <section id="timeline" class="tab-content hidden flex-1 flex flex-col pt-4 opacity-0">
+            <div class="flex items-center gap-3 mb-12">
+                <div class="p-2 bg-violet-500/20 rounded-lg border border-violet-500/30">
+                    <i data-lucide="clock" class="text-violet-400 w-6 h-6"></i>
+                </div>
+                <h2 class="text-3xl font-semibold text-slate-100">Our Timeline</h2>
+            </div>
+
+            <div class="relative border-l-2 border-slate-800/80 ml-4 space-y-12 pb-8">
+                
+                <!-- Memory 1 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full flex items-center justify-center border border-amber-500/40 bg-slate-900 shadow-[0_0_10px_rgba(245,158,11,0.2)] transition duration-300 group-hover:scale-110 group-hover:border-amber-400">
+                        <i data-lucide="star" class="text-amber-400 w-4 h-4"></i>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl transition duration-500 hover:bg-slate-800/40 hover:border-amber-500/30">
+                        <span class="text-xs font-semibold tracking-wider text-amber-400/80 uppercase mb-2 block">Diwali 2026</span>
+                        <h3 class="text-xl font-medium text-slate-100 mb-3 transition-colors group-hover:text-amber-300">The Violet Collab 🌸</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Mummy ki daant se bachkar, finalizing the perfect violet ethnic look with matching bangles. A 10/10 choice for a 10/10 person.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Memory 2 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full flex items-center justify-center border border-violet-500/40 bg-slate-900 shadow-[0_0_10px_rgba(139,92,246,0.2)] transition duration-300 group-hover:scale-110 group-hover:border-violet-400">
+                        <i data-lucide="zap" class="text-violet-400 w-4 h-4"></i>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl transition duration-500 hover:bg-slate-800/40 hover:border-violet-500/30">
+                        <span class="text-xs font-semibold tracking-wider text-violet-400/80 uppercase mb-2 block">Late Night Banters</span>
+                        <h3 class="text-xl font-medium text-slate-100 mb-3 transition-colors group-hover:text-violet-300">Newton's Apology 🍎</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            When our jokes reached a level where even Newton had to wake up from his grave to apologize for his laws of physics.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Memory 3 -->
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full flex items-center justify-center border border-pink-500/40 bg-slate-900 shadow-[0_0_10px_rgba(236,72,153,0.2)] transition duration-300 group-hover:scale-110 group-hover:border-pink-400">
+                        <i data-lucide="shield" class="text-pink-400 w-4 h-4"></i>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl transition duration-500 hover:bg-slate-800/40 hover:border-pink-500/30">
+                        <span class="text-xs font-semibold tracking-wider text-pink-400/80 uppercase mb-2 block">The Agreement</span>
+                        <h3 class="text-xl font-medium text-slate-100 mb-3 transition-colors group-hover:text-pink-300">10x Speed ⏱️</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Braking the speed limit of our connection, but making a promise: we only move forward at your comfort. <span class="italic">"Han thodi kr skte h."</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION: SAFE SPACE -->
+        <section id="safespace" class="tab-content hidden flex-1 flex flex-col items-center pt-12 opacity-0">
+            <div class="flex items-center gap-3 mb-10 w-full justify-center">
+                <div class="p-2 bg-pink-500/20 rounded-lg border border-pink-500/30">
+                    <i data-lucide="lock" class="text-pink-400 w-6 h-6"></i>
+                </div>
+                <h2 class="text-3xl font-semibold text-slate-100">Safe Space</h2>
+            </div>
+
+            <p class="text-slate-400 text-center mb-12 max-w-sm text-lg">
+                A place free from rush, expectations, and external noise. Just peace.
+            </p>
+
+            <div class="relative w-full max-w-md group animate-float">
+                <!-- Glowing Backdrop -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-violet-600 to-amber-500 rounded-3xl blur-md opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+                
+                <!-- Card -->
+                <div class="relative glass-panel rounded-3xl p-10 border border-violet-500/40 text-center flex flex-col items-center bg-slate-900/80">
+                    
+                    <div class="w-16 h-16 rounded-full bg-violet-500/10 flex items-center justify-center mb-8 border border-violet-500/20">
+                        <i data-lucide="moon" class="text-amber-300 w-8 h-8 fill-amber-300/20"></i>
+                    </div>
+                    
+                    <div class="space-y-5 text-slate-200 font-medium text-lg md:text-xl leading-loose">
+                        <p>वक़्त की रफ्तार चाहे कितनी भी हो,<br>सुकून बस तुम्हारे ठहरने में है।</p>
+                        <div class="w-16 h-[1px] bg-gradient-to-r from-transparent via-violet-400/50 to-transparent mx-auto my-6"></div>
+                        <p>ये रोशनी का सफर, ये दीवाली का रंग,<br>महफूज़ हैं ये पल, सिर्फ तुम्हारे संग।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-md">
+        <div class="glass-panel rounded-full p-2 flex justify-between items-center shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
+            
+            <button id="btn-home" onclick="switchTab('home')" class="nav-btn active flex items-center gap-2 px-5 py-3 rounded-full transition-all duration-300 text-amber-300 bg-violet-900/40 shadow-[inset_0_0_12px_rgba(139,92,246,0.3)]">
+                <i data-lucide="home" class="w-5 h-5"></i>
+                <span class="text-sm font-medium">Home</span>
+            </button>
+            
+            <button id="btn-timeline" onclick="switchTab('timeline')" class="nav-btn flex items-center gap-2 px-5 py-3 rounded-full transition-all duration-300 text-slate-400 hover:text-slate-200 hover:bg-slate-800/60">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+                <span class="text-sm font-medium hidden">Timeline</span>
+            </button>
+            
+            <button id="btn-safespace" onclick="switchTab('safespace')" class="nav-btn flex items-center gap-2 px-5 py-3 rounded-full transition-all duration-300 text-slate-400 hover:text-slate-200 hover:bg-slate-800/60">
+                <i data-lucide="heart" class="w-5 h-5"></i>
+                <span class="text-sm font-medium hidden">Safe Space</span>
+            </button>
+
+        </div>
+    </nav>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            // 1. Hide all content sections
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('animate-fade-in');
+            });
+
+            // 2. Reset all buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('text-amber-300', 'bg-violet-900/40', 'shadow-[inset_0_0_12px_rgba(139,92,246,0.3)]');
+                btn.classList.add('text-slate-400');
+                // Hide text for inactive buttons
+                btn.querySelector('span').classList.add('hidden');
+            });
+
+            // 3. Show active content
+            const activeContent = document.getElementById(tabId);
+            activeContent.classList.remove('hidden');
+            // Force browser reflow to restart animation
+            void activeContent.offsetWidth; 
+            activeContent.classList.add('animate-fade-in');
+
+            // 4. Highlight active button
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.add('text-amber-300', 'bg-violet-900/40', 'shadow-[inset_0_0_12px_rgba(139,92,246,0.3)]');
+            activeBtn.classList.remove('text-slate-400');
+            // Show text for active button
+            activeBtn.querySelector('span').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
